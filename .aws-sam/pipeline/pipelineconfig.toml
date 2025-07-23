@@ -1,0 +1,23 @@
+version = 0.1
+[default.pipeline_bootstrap.parameters]
+oidc_provider_url = "https://token.actions.githubusercontent.com"
+oidc_client_id = "sts.amazonaws.com"
+github_org = "jiremv"
+github_repo = "java-backend-quarkus-keycloak"
+deployment_branch = "main"
+oidc_provider = "github-actions"
+permissions_provider = "OpenID Connect (OIDC)"
+
+[java-backend-quarkus-keycloak-dev.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::545200407638:role/aws-sam-cli-managed-java-back-PipelineExecutionRole-MgOSwN7G0ssF"
+cloudformation_execution_role = "arn:aws:iam::545200407638:role/aws-sam-cli-managed-java--CloudFormationExecutionRo-aPLiJWbJcDH3"
+artifacts_bucket = "aws-sam-cli-managed-java-backend-q-artifactsbucket-cmi69qbpqgas"
+image_repository = ""
+region = "us-west-1"
+
+[java-backend-quarkus-keycloak-prod.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::545200407638:role/aws-sam-cli-managed-java-back-PipelineExecutionRole-0jrCRT0icbwW"
+cloudformation_execution_role = "arn:aws:iam::545200407638:role/aws-sam-cli-managed-java--CloudFormationExecutionRo-jFzSamA74DRh"
+artifacts_bucket = "aws-sam-cli-managed-java-backend-q-artifactsbucket-ya6smx1qqib2"
+image_repository = ""
+region = "us-west-2"
