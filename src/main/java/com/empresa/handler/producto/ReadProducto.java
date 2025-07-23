@@ -47,14 +47,14 @@ public class ReadProducto extends ReadProductoAbstract {
                 String jwkJson = "{\n" +
                         "  \"e\": \"AQAB\",\n" +
                         "  \"kty\": \"RSA\",\n" +
-                        "  \"n\": \"tf1f25bAtZMGbwXkD_UNZ1z9eH91rNeZ-MIWeiGpE-g0u1Y6lBKi-vI6O0nFGTcilCTR6tcqXu9Ah6cwxPC6n0ORCUFd_VXRzjGHzrU5_Kofhb8_yPYFaAp3JAuvrj7PJNnY7RUZZibBuBpGIesrdwuDdBDprR4VzKuSKl7HZCMcAkhqNQjaSNt1UhwDb1mV22uu4NfjqaGSfp2LnRWnpUYTGZobTRE2S5kAw73kefewPCHiooryCZK_69NK5TAZWXWf-YPpFtdwmf7mFggonpWWrCuTWikEKicwdL6xn6oWYeuVlM80M2hUhNJNUSLB7fDHYli5NRqky315bsjvhw\"\n" +
+                        "  \"n\": \"lqqqoCoq0exZoPtqDxrM_9E7OVqnRDB-aqd1okNWdKwgA-Ly_XrFaERJO5rhAkiIhd1Untx20KonoR8aC_O9S1b0RIkLTo15Cv4_WddBFX2WjBwEvnWXmWkNrEwZdT0ayOdkEXKwfyJXa9fTL4PlX1cNSEgASX_XyxtRd-HKtDFiffIMTo_mpKjR5oKi5rxUhwzQHm6Nhc2vKOEU3pU5B5oBn-dl08DxDpaVWa-PBLwZ1IIaxv0gGfM46zrb4q2XIS285Xf8pzx9ADngGjCsS8BtcbuU_89elkZKeconn5CC_nejVK60pWJS6d517sWMjnr4JIh0kSl3Ae2o4KlSmQ\"\n" +
                         "}";
 
                 try {
                     PublicKey publicKey = getPublicKeyFromJWK(jwkJson);
                     Algorithm algorithm = Algorithm.RSA256((RSAPublicKey) publicKey, null);
                     JWTVerifier verifier = JWT.require(algorithm)
-                            .withIssuer("https://empresa-u8698.vm.elestio.app/realms/Empresa")
+                            .withIssuer("https://examensolucion-u8698.vm.elestio.app/realms/EMPRESA")
                             .build();
                     DecodedJWT token = verifier.verify(authToken);
                     // Extraer y utilizar reclamaciones

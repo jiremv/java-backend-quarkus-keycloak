@@ -54,7 +54,7 @@ public class BusquedaProducto extends BusquedaProductoAbstract {
                     PublicKey publicKey = getPublicKeyFromJWK(jwkJson);
                     Algorithm algorithm = Algorithm.RSA256((RSAPublicKey) publicKey, null);
                     JWTVerifier verifier = JWT.require(algorithm)
-                            .withIssuer("https://empresa-u8698.vm.elestio.app/realms/Empresa")
+                            .withIssuer("https://examensolucion-u8698.vm.elestio.app/realms/EMPRESA")
                             .build();
                     DecodedJWT token = verifier.verify(authToken);
                     // Extraer y utilizar reclamaciones
