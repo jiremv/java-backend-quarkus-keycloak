@@ -1,7 +1,7 @@
 # 🔥  java-backend-quarkus
 
 Application AWS Java with Quarkus and Keycloak Access Control 100% Serverless
-https://gi2q7mf17i.execute-api.us-east-1.amazonaws.com/prod/productos
+https://gypzpi4m2g.execute-api.us-west-1.amazonaws.com/prod/productos
 
 ## 📄 Descripción
 
@@ -46,6 +46,28 @@ Para arquitecturas en AWS Lambda o contenedores, Quarkus Reactivo destaca por me
 | **Ecosistema en AWS Lambda** | ✅ Excelente. Soporte nativo. Imágenes optimizadas. Buen rendimiento serverless.                   | ⚠️ Bueno. Compatible, pero menos eficiente en Lambda (cold starts mayores). |
 | **Orientación**              | 🎯 Microservicios ligeros, serverless, arquitecturas cloud-native.                                | 🎯 Microservicios clásicos. No orientado directamente a serverless.         |
 
+## Keycloak
+- Keycloak es una solución de código abierto para identidad y acceso (IAM) que proporciona autenticación, autorización, gestión de usuarios y federación de identidades lista para usar. Es ampliamente adoptado por su flexibilidad, seguridad y facilidad de integración con aplicaciones modernas.
+- 
+  🔐 SSO (Single Sign-On): Un solo inicio de sesión para múltiples apps.
+
+👥 Gestión de usuarios y roles: Centralizada y fácil de administrar.
+
+🛡️ Autenticación fuerte: Soporta MFA, OTP y autenticación social.
+
+🌐 Estándares abiertos: Compatible con OAuth2, OIDC y SAML.
+
+🔄 Federación de identidades: Integra LDAP, AD, Google, GitHub, etc.
+
+🧩 Extensible: Personalizable con temas, flujos y autenticadores propios.
+
+🚀 Escalable y productivo: Ideal para entornos cloud y microservicios.
+
+📊 Eventos y auditoría: Registro detallado de acciones de seguridad.
+
+🧪 API REST y UI admin: Administración automática y visual.
+
+🆓 Código abierto: Sin costo de licencia, respaldado por Red Hat.
 
 ## Comparativa Serverless Java - AWS Lambda vs Azure Functions
 Comparativa profesional del despliegue de funciones serverless escritas en **Java** en los entornos **AWS Lambda** y **Azure Functions**, destacando ventajas, limitaciones y costos asociados.
@@ -136,8 +158,8 @@ Comparativa profesional del despliegue de funciones serverless escritas en **Jav
 
 ### 2️⃣ Clona el repositorio y navega al proyecto:
 ```bash
-git clone https://github.com/tu-usuario/java-backend-quarkus.git
-cd java-backend-quarkus
+git clone https://github.com/tu-usuario/java-backend-quarkus-keycloak.git
+cd java-backend-quarkus-keycloak
 ```
 
 ### 3️⃣ Despliegue:
@@ -175,7 +197,7 @@ Puedes visualizarla usando herramientas como:
 
 ## 📊 Colección para probar con Postman
 
-La colección de pruebas crud es: Quarkus_crud.postman_collection.json
+La colección de pruebas crud es: Keycloak_Quarkus_crud.postman_collection.json
 
 ![./readme/images/img_5.png](./readme/images/img_5.png)
 
