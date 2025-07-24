@@ -1,34 +1,21 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.0",
   "info": {
-    "title": "CRUD de Productos - Quarkus",
-    "description": "API REST para gesti\u00f3n de productos en DynamoDB usando Quarkus y AWS Lambda",
+    "title": "Quarkus Productos API",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "https://gi2q7mf17i.execute-api.us-east-1.amazonaws.com/prod"
-    }
-  ],
   "paths": {
     "/productos": {
       "get": {
-        "summary": "Listar todos los productos",
+        "summary": "Listar productos",
         "responses": {
           "200": {
-            "description": "Lista de productos",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProductoListResponse"
-                }
-              }
-            }
+            "description": "Lista de productos"
           }
         }
       },
       "post": {
-        "summary": "Crear un nuevo producto",
+        "summary": "Crear producto",
         "requestBody": {
           "required": true,
           "content": {
@@ -40,15 +27,8 @@
           }
         },
         "responses": {
-          "201": {
-            "description": "Producto creado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Response"
-                }
-              }
-            }
+          "200": {
+            "description": "Producto creado"
           }
         }
       }
@@ -58,8 +38,8 @@
         "summary": "Buscar producto por ID",
         "parameters": [
           {
-            "in": "path",
             "name": "id",
+            "in": "path",
             "required": true,
             "schema": {
               "type": "string"
@@ -68,23 +48,19 @@
         ],
         "responses": {
           "200": {
-            "description": "Producto encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProductoResponse"
-                }
-              }
-            }
+            "description": "Producto encontrado"
+          },
+          "404": {
+            "description": "Producto no encontrado"
           }
         }
       },
       "put": {
-        "summary": "Modificar un producto existente",
+        "summary": "Modificar producto por ID",
         "parameters": [
           {
-            "in": "path",
             "name": "id",
+            "in": "path",
             "required": true,
             "schema": {
               "type": "string"
@@ -103,23 +79,16 @@
         },
         "responses": {
           "200": {
-            "description": "Producto actualizado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Response"
-                }
-              }
-            }
+            "description": "Producto actualizado"
           }
         }
       },
       "delete": {
-        "summary": "Eliminar un producto",
+        "summary": "Eliminar producto por ID",
         "parameters": [
           {
-            "in": "path",
             "name": "id",
+            "in": "path",
             "required": true,
             "schema": {
               "type": "string"
@@ -128,14 +97,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Producto eliminado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Response"
-                }
-              }
-            }
+            "description": "Producto eliminado"
           }
         }
       }
@@ -162,59 +124,8 @@
             "type": "string",
             "format": "date"
           }
-        }
-      },
-      "ProductoResponse": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string"
-          },
-          "message": {
-            "type": "string"
-          },
-          "data": {
-            "type": "object",
-            "properties": {
-              "producto": {
-                "$ref": "#/components/schemas/Producto"
-              }
-            }
-          }
-        }
-      },
-      "ProductoListResponse": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string"
-          },
-          "message": {
-            "type": "string"
-          },
-          "data": {
-            "type": "object",
-            "properties": {
-              "productos": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Producto"
-                }
-              }
-            }
-          }
-        }
-      },
-      "Response": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string"
-          },
-          "message": {
-            "type": "string"
-          }
-        }
+        },
+        "required": ["productoId", "nombre", "categoria", "precio", "fechaCreacion"]
       }
     }
   }

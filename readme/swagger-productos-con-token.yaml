@@ -1,24 +1,16 @@
-
-openapi: 3.0.1
+openapi: 3.0.0
 info:
-  title: CRUD de Productos - Quarkus
-  description: API REST para gestión de productos en DynamoDB usando Quarkus y AWS Lambda
-  version: 1.0.0
-servers:
-  - url: https://gi2q7mf17i.execute-api.us-east-1.amazonaws.com/prod
+  title: Quarkus Productos API
+  version: "1.0.0"
 paths:
   /productos:
     get:
-      summary: Listar todos los productos
+      summary: Listar productos
       responses:
         '200':
           description: Lista de productos
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProductoListResponse'
     post:
-      summary: Crear un nuevo producto
+      summary: Crear producto
       requestBody:
         required: true
         content:
@@ -26,33 +18,27 @@ paths:
             schema:
               $ref: '#/components/schemas/Producto'
       responses:
-        '201':
+        '200':
           description: Producto creado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Response'
   /productos/{id}:
     get:
       summary: Buscar producto por ID
       parameters:
-        - in: path
-          name: id
+        - name: id
+          in: path
           required: true
           schema:
             type: string
       responses:
         '200':
           description: Producto encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProductoResponse'
+        '404':
+          description: Producto no encontrado
     put:
-      summary: Modificar un producto existente
+      summary: Modificar producto por ID
       parameters:
-        - in: path
-          name: id
+        - name: id
+          in: path
           required: true
           schema:
             type: string
@@ -65,29 +51,27 @@ paths:
       responses:
         '200':
           description: Producto actualizado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Response'
     delete:
-      summary: Eliminar un producto
+      summary: Eliminar producto por ID
       parameters:
-        - in: path
-          name: id
+        - name: id
+          in: path
           required: true
           schema:
             type: string
       responses:
         '200':
           description: Producto eliminado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Response'
 components:
   schemas:
     Producto:
       type: object
+      required:
+        - productoId
+        - nombre
+        - categoria
+        - precio
+        - fechaCreacion
       properties:
         productoId:
           type: string
@@ -100,36 +84,3 @@ components:
         fechaCreacion:
           type: string
           format: date
-    ProductoResponse:
-      type: object
-      properties:
-        status:
-          type: string
-        message:
-          type: string
-        data:
-          type: object
-          properties:
-            producto:
-              $ref: '#/components/schemas/Producto'
-    ProductoListResponse:
-      type: object
-      properties:
-        status:
-          type: string
-        message:
-          type: string
-        data:
-          type: object
-          properties:
-            productos:
-              type: array
-              items:
-                $ref: '#/components/schemas/Producto'
-    Response:
-      type: object
-      properties:
-        status:
-          type: string
-        message:
-          type: string
