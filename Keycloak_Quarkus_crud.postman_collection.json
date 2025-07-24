@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "e47edc60-f1fe-42e3-bc33-500833cd182e",
+		"name": "Keycloak_Quarkus_crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9885432"
+	},
+	"item": [
+		{
+			"name": "traer_token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "invitado",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "empresa",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "4zCvMAfsSTn8xJYvVs1RK9CtmeUzwCXd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://examensolucion-u8698.vm.elestio.app/realms/EMPRESA/protocol/openid-connect/token",
+					"protocol": "https",
+					"host": [
+						"examensolucion-u8698",
+						"vm",
+						"elestio",
+						"app"
+					],
+					"path": [
+						"realms",
+						"EMPRESA",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJfQTBaSjZwRFpaWXVGWXdmVHZTSi1qd2g3LWJIMm51QWhJdUhZUGw2VFdrIn0.eyJleHAiOjE3NTMzMTc1NTEsImlhdCI6MTc1MzMxNzI1MSwianRpIjoiZTczNjZmZmEtYmEyYS00MmI1LTliYjMtYjk3NzZkY2YwNjJmIiwiaXNzIjoiaHR0cHM6Ly9leGFtZW5zb2x1Y2lvbi11ODY5OC52bS5lbGVzdGlvLmFwcC9yZWFsbXMvRU1QUkVTQSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiZGIwYTVkMi00ZGNmLTRjMGQtOTgyMS0yMTgzM2IwNjgzZTIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJlbXByZXNhIiwic2Vzc2lvbl9zdGF0ZSI6ImEzZjFkZjEzLTlmMTQtNDk2Zi04NDk1LTI1ZmM0YzJiMDI3MCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cHM6Ly9neXB6cGk0bTJnLmV4ZWN1dGUtYXBpLnVzLXdlc3QtMS5hbWF6b25hd3MuY29tL3Byb2QvIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtZW1wcmVzYSIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6ImEzZjFkZjEzLTlmMTQtNDk2Zi04NDk1LTI1ZmM0YzJiMDI3MCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiaW52aSB0YWRvIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiaW52aXRhZG8iLCJnaXZlbl9uYW1lIjoiaW52aSIsImZhbWlseV9uYW1lIjoidGFkbyIsImVtYWlsIjoicGF1bF9saXphcmRvQGhvdG1haWwuY29tIn0.GJMG7ZMnzoLv-6fC7cGhRKdA5fRsDgBooMlZw5O0U2UuFqeRmIawY9_0vqMUE4wtuPnpJRyCq6N5DNu-PG37zniPsHWf8dO2g0JkEJyHzZnuxEa9v4F7ypt22qQf8jbnYMltNK_82BeDy8s-djCcdt_TJxL0zFEmo_g4hAcOnZcv-jwoqkB_YCM-u82Qi4gVSxWaQn1IuRZmfDk2FGLaSCGQ1P3f7Ii56BESDiQk9gIrs4UBpkl_JxTpoZPXnojxn0lNozUeogZp71_jZBPOKDO4iWW5Zw0ewJTRdxBIY_FcLtdJbDtw4fud0nzaEVqYddFz-klITQkuDH6H1lhF4g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productoId\": \"2\",\r\n  \"nombre\": \"string\",\r\n  \"categoria\": \"string\",\r\n  \"precio\": 0,\r\n  \"fechaCreacion\": \"2025-07-23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gypzpi4m2g.execute-api.us-west-1.amazonaws.com/prod/productos/",
+					"protocol": "https",
+					"host": [
+						"gypzpi4m2g",
+						"execute-api",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"productos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJfQTBaSjZwRFpaWXVGWXdmVHZTSi1qd2g3LWJIMm51QWhJdUhZUGw2VFdrIn0.eyJleHAiOjE3NTMzMTc1NTEsImlhdCI6MTc1MzMxNzI1MSwianRpIjoiZTczNjZmZmEtYmEyYS00MmI1LTliYjMtYjk3NzZkY2YwNjJmIiwiaXNzIjoiaHR0cHM6Ly9leGFtZW5zb2x1Y2lvbi11ODY5OC52bS5lbGVzdGlvLmFwcC9yZWFsbXMvRU1QUkVTQSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiZGIwYTVkMi00ZGNmLTRjMGQtOTgyMS0yMTgzM2IwNjgzZTIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJlbXByZXNhIiwic2Vzc2lvbl9zdGF0ZSI6ImEzZjFkZjEzLTlmMTQtNDk2Zi04NDk1LTI1ZmM0YzJiMDI3MCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cHM6Ly9neXB6cGk0bTJnLmV4ZWN1dGUtYXBpLnVzLXdlc3QtMS5hbWF6b25hd3MuY29tL3Byb2QvIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtZW1wcmVzYSIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6ImEzZjFkZjEzLTlmMTQtNDk2Zi04NDk1LTI1ZmM0YzJiMDI3MCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiaW52aSB0YWRvIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiaW52aXRhZG8iLCJnaXZlbl9uYW1lIjoiaW52aSIsImZhbWlseV9uYW1lIjoidGFkbyIsImVtYWlsIjoicGF1bF9saXphcmRvQGhvdG1haWwuY29tIn0.GJMG7ZMnzoLv-6fC7cGhRKdA5fRsDgBooMlZw5O0U2UuFqeRmIawY9_0vqMUE4wtuPnpJRyCq6N5DNu-PG37zniPsHWf8dO2g0JkEJyHzZnuxEa9v4F7ypt22qQf8jbnYMltNK_82BeDy8s-djCcdt_TJxL0zFEmo_g4hAcOnZcv-jwoqkB_YCM-u82Qi4gVSxWaQn1IuRZmfDk2FGLaSCGQ1P3f7Ii56BESDiQk9gIrs4UBpkl_JxTpoZPXnojxn0lNozUeogZp71_jZBPOKDO4iWW5Zw0ewJTRdxBIY_FcLtdJbDtw4fud0nzaEVqYddFz-klITQkuDH6H1lhF4g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gypzpi4m2g.execute-api.us-west-1.amazonaws.com/prod/productos",
+					"protocol": "https",
+					"host": [
+						"gypzpi4m2g",
+						"execute-api",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modificar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJfQTBaSjZwRFpaWXVGWXdmVHZTSi1qd2g3LWJIMm51QWhJdUhZUGw2VFdrIn0.eyJleHAiOjE3NTMzMTc1NTEsImlhdCI6MTc1MzMxNzI1MSwianRpIjoiZTczNjZmZmEtYmEyYS00MmI1LTliYjMtYjk3NzZkY2YwNjJmIiwiaXNzIjoiaHR0cHM6Ly9leGFtZW5zb2x1Y2lvbi11ODY5OC52bS5lbGVzdGlvLmFwcC9yZWFsbXMvRU1QUkVTQSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiZGIwYTVkMi00ZGNmLTRjMGQtOTgyMS0yMTgzM2IwNjgzZTIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJlbXByZXNhIiwic2Vzc2lvbl9zdGF0ZSI6ImEzZjFkZjEzLTlmMTQtNDk2Zi04NDk1LTI1ZmM0YzJiMDI3MCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cHM6Ly9neXB6cGk0bTJnLmV4ZWN1dGUtYXBpLnVzLXdlc3QtMS5hbWF6b25hd3MuY29tL3Byb2QvIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtZW1wcmVzYSIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6ImEzZjFkZjEzLTlmMTQtNDk2Zi04NDk1LTI1ZmM0YzJiMDI3MCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiaW52aSB0YWRvIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiaW52aXRhZG8iLCJnaXZlbl9uYW1lIjoiaW52aSIsImZhbWlseV9uYW1lIjoidGFkbyIsImVtYWlsIjoicGF1bF9saXphcmRvQGhvdG1haWwuY29tIn0.GJMG7ZMnzoLv-6fC7cGhRKdA5fRsDgBooMlZw5O0U2UuFqeRmIawY9_0vqMUE4wtuPnpJRyCq6N5DNu-PG37zniPsHWf8dO2g0JkEJyHzZnuxEa9v4F7ypt22qQf8jbnYMltNK_82BeDy8s-djCcdt_TJxL0zFEmo_g4hAcOnZcv-jwoqkB_YCM-u82Qi4gVSxWaQn1IuRZmfDk2FGLaSCGQ1P3f7Ii56BESDiQk9gIrs4UBpkl_JxTpoZPXnojxn0lNozUeogZp71_jZBPOKDO4iWW5Zw0ewJTRdxBIY_FcLtdJbDtw4fud0nzaEVqYddFz-klITQkuDH6H1lhF4g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productoId\": \"1\",\r\n  \"nombre\": \"nombre\",\r\n  \"categoria\": \"categoria\",\r\n  \"precio\": 1000,\r\n  \"fechaCreacion\": \"2025-07-23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gypzpi4m2g.execute-api.us-west-1.amazonaws.com/prod/productos/1",
+					"protocol": "https",
+					"host": [
+						"gypzpi4m2g",
+						"execute-api",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"productos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJfQTBaSjZwRFpaWXVGWXdmVHZTSi1qd2g3LWJIMm51QWhJdUhZUGw2VFdrIn0.eyJleHAiOjE3NTMzMTc1NTEsImlhdCI6MTc1MzMxNzI1MSwianRpIjoiZTczNjZmZmEtYmEyYS00MmI1LTliYjMtYjk3NzZkY2YwNjJmIiwiaXNzIjoiaHR0cHM6Ly9leGFtZW5zb2x1Y2lvbi11ODY5OC52bS5lbGVzdGlvLmFwcC9yZWFsbXMvRU1QUkVTQSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiZGIwYTVkMi00ZGNmLTRjMGQtOTgyMS0yMTgzM2IwNjgzZTIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJlbXByZXNhIiwic2Vzc2lvbl9zdGF0ZSI6ImEzZjFkZjEzLTlmMTQtNDk2Zi04NDk1LTI1ZmM0YzJiMDI3MCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cHM6Ly9neXB6cGk0bTJnLmV4ZWN1dGUtYXBpLnVzLXdlc3QtMS5hbWF6b25hd3MuY29tL3Byb2QvIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtZW1wcmVzYSIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6ImEzZjFkZjEzLTlmMTQtNDk2Zi04NDk1LTI1ZmM0YzJiMDI3MCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiaW52aSB0YWRvIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiaW52aXRhZG8iLCJnaXZlbl9uYW1lIjoiaW52aSIsImZhbWlseV9uYW1lIjoidGFkbyIsImVtYWlsIjoicGF1bF9saXphcmRvQGhvdG1haWwuY29tIn0.GJMG7ZMnzoLv-6fC7cGhRKdA5fRsDgBooMlZw5O0U2UuFqeRmIawY9_0vqMUE4wtuPnpJRyCq6N5DNu-PG37zniPsHWf8dO2g0JkEJyHzZnuxEa9v4F7ypt22qQf8jbnYMltNK_82BeDy8s-djCcdt_TJxL0zFEmo_g4hAcOnZcv-jwoqkB_YCM-u82Qi4gVSxWaQn1IuRZmfDk2FGLaSCGQ1P3f7Ii56BESDiQk9gIrs4UBpkl_JxTpoZPXnojxn0lNozUeogZp71_jZBPOKDO4iWW5Zw0ewJTRdxBIY_FcLtdJbDtw4fud0nzaEVqYddFz-klITQkuDH6H1lhF4g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gypzpi4m2g.execute-api.us-west-1.amazonaws.com/prod/productos/1",
+					"protocol": "https",
+					"host": [
+						"gypzpi4m2g",
+						"execute-api",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"productos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

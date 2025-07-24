@@ -6,10 +6,9 @@ https://gi2q7mf17i.execute-api.us-east-1.amazonaws.com/prod/productos
 ## 📄 Descripción
 
 Este proyecto implementa una solución **serverless**. Esta solución no utiliza servidores EC2, tampoco contenedores Kuberrnetes. 
-Es totalemente administrado por AWS el cual provee elasticidad, escalabilidad y alta disponibilidad.
-Este es un proyecto backend java, que puedes utilizar con tus proyectos de frontend.
+Es totalmente administrado por AWS el cual provee elasticidad, escalabilidad y alta disponibilidad.
 
-Utilizamos **Amazon API Gateway** que se comunica muy bien con  **AWS CloudFormation**. Vemos que ha creado el API
+Utilizamos **Amazon API Gateway** que se comunica muy bien con  **AWS CloudFormation**. 
 
 También tenemos la base de datos 100% serverless **Amazon DynamoDB**. 
 También se ha montado el Control de Acceso con Keycloak.
@@ -181,9 +180,9 @@ La colección de pruebas crud es: Quarkus_crud.postman_collection.json
 ![./readme/images/img_5.png](./readme/images/img_5.png)
 
 ### Archivos incluidos
-- `Quarkus_crud.postman_collection.json` – Colección de las pruebas con Postman
-- `swagger-productos.json` – Formato OpenAPI 3.0
-- `swagger-productos.yaml` – Alternativa legible en YAML
+- `Keycloak_Quarkus_crud.postman_collection` – Colección de las pruebas con Postman
+- `swagger-productos-con-token.json` – Formato OpenAPI 3.0
+- `swagger-productos-con-token.yaml` – Alternativa legible en YAML
 
 Estodo archivos se encuentran en la carpeta readme
 
